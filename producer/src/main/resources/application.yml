@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    stream:
+      function:
+        productEventProducer
+      bindings:
+        productEventProducer-out-0:
+          destination: product-event-1
+          # Here, we extract the key which is injected into PartitionSelectorStrategy#selectPartition
+#          producer:
+#            partitionKeyExpression: 'getHeaders().get("partitionKey")'
+#            partitionCount: 5

@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    stream:
+      function:
+        definition: productEventFunction
+      bindings:
+        productEventFunction-in-0:
+          destination: product-event-1
+          group: product-consumer-0
+        productEventFunction-out-0:
+          destination: product-event-2

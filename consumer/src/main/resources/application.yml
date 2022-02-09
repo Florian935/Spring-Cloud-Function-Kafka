@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    stream:
+      function:
+        definition: productEventConsumer;logEventConsumer
+      bindings:
+        productEventConsumer-in-0:
+          destination: product-event-2
+          group: product-consumer-0
+        logEventConsumer-in-0:
+          destination: product-event-2
+          group: log-consumer-0
