@@ -10,5 +10,36 @@ spring:
         productEventFunction-in-0:
           destination: product-event-1
           group: product-consumer-0
+#          binder: binder_name_1 # For connecting to multiple systems
         productEventFunction-out-0:
           destination: product-event-2
+#          binder: binder_name_2 # For connecting to multiple systems
+
+      ############ In case of you want to connect to multiple systems ##########
+#      binders:
+#        binder_name_1:
+#          type: kafka
+#          environment:
+#            spring:
+#              kafka:
+#                bootstrap-servers: YOUR_SERVER_URL
+#                properties:
+#                  security:
+#                    protocol: SASL_SSL
+#                  sasl:
+#                    mechanism: SCRAM-SHA-256
+#                    jaas:
+#                      config: org.apache.kafka.common.security.scram.ScramLoginModule required username="YOUR_USERNAME" password="YOUR_PASSWORD";
+#        binder_name_2:
+#          type: kafka
+#          environment:
+#            spring:
+#              kafka:
+#                bootstrap-servers: YOUR_SERVER_URL
+#                properties:
+#                  security:
+#                    protocol: SASL_SSL
+#                  sasl:
+#                    mechanism: SCRAM-SHA-256
+#                    jaas:
+#                      config: org.apache.kafka.common.security.scram.ScramLoginModule required username="YOUR_USERNAME" password="YOUR_PASSWORD";

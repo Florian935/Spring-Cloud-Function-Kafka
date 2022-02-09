@@ -13,3 +13,14 @@ spring:
         logEventConsumer-in-0:
           destination: product-event-2
           group: log-consumer-0
+
+    ############ In case of you want to enter your configuration ##########
+#  kafka:
+#    bootstrap-servers: YOUR_SERVER_URL
+#    properties:
+#      security:
+#        protocol: SASL_SSL
+#      sasl:
+#        mechanism: SCRAM-SHA-256
+#        jaas:
+#          config: org.apache.kafka.common.security.scram.ScramLoginModule required username="YOUR_USERNAME" password="YOUR_PASSWORD";
